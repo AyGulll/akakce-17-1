@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class _04_LoginTest extends BaseDriver {
+public class LoginTest extends BaseDriver {
 @Test
     public void LoginTest(){
 
