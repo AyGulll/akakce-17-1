@@ -120,11 +120,31 @@ public class AkakceProjeSignUp extends BaseDriver {
         WebElement hesapAcButonu = driver.findElement(By.xpath("//input[@id='rfb']"));
         hesapAcButonu.click();
 
-
-
+        MyFunction.wait(2);
         //BekleVeKapat();
+    }
+
+    @Test
+    public void LoginTest(){
+
+        driver.get("https://www.akakce.com/");
+        WebElement login= driver.findElement(By.xpath("//*[text()='Giriş Yap']"));
+        login.click();
+        MyFunction.wait(3);
+        WebElement emailbox=driver.findElement(By.xpath("//input[@id='life']"));
+        emailbox.sendKeys("a3432alemdar@yandex.com");
+        MyFunction.wait(3);
+        WebElement password=driver.findElement(By.xpath("//input[@id='lifp']"));
+        password.sendKeys("Qwer123!+%");
+        MyFunction.wait(3);
+        WebElement rememberme=driver.findElement(By.xpath("//input[@name='lifr']"));
+        rememberme.isSelected();
+        MyFunction.wait(3);
+        WebElement enter= driver.findElement(By.xpath("//input[@id='lfb']"));
+        enter.click();
 
 
+        //BekleveKapat();
     }
 
 
