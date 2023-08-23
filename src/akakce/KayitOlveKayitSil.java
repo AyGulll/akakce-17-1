@@ -1,5 +1,6 @@
 package akakce;
 
+
 import Utility.BaseDriver;
 import Utility.MyFunction;
 import org.junit.Assert;
@@ -8,43 +9,42 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class KayitOlveKayitSil extends BaseDriver{
+public class KayitolVeSil extends BaseDriver {
+
 
     @Test
-    public void Test1()
+    public void Test1()            // YENI HESAP OLUŞTURMA
     {
         driver.get("https://www.akakce.com");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-
-        //HESAP AÇMA
 
         WebElement hesapAcLink = driver.findElement(By.xpath("//a[contains(@href, 'giris/?m=1&') and text()='Hesap Aç']"));
         hesapAcLink.click();
         MyFunction.wait(1);
 
         WebElement ad = driver.findElement(By.id("rnufn"));
-        ad.sendKeys("Bora");
+        ad.sendKeys("DurmakYok");
         MyFunction.wait(1);
 
         WebElement soyad = driver.findElement(By.id("rnufs"));
-        soyad.sendKeys("Dora");
+        soyad.sendKeys("YolaDevam");
         MyFunction.wait(1);
 
         WebElement email1 = driver.findElement(By.xpath("//input[@id='rnufe1']"));
-        email1.sendKeys("BoraDora@gmail.com");
+        email1.sendKeys("DurmakYok123@gmail.com");
         MyFunction.wait(1);
 
         WebElement email2 = driver.findElement(By.xpath("//input[@id='rnufe2']"));
-        email2.sendKeys("BoraDora@gmail.com");
+        email2.sendKeys("DurmakYok123@gmail.com");
         MyFunction.wait(1);
 
         WebElement sifre1 = driver.findElement(By.xpath("//input[@id='rnufp1']"));
-        sifre1.sendKeys("BoraDora123");
+        sifre1.sendKeys("DurmakYok123");
         MyFunction.wait(1);
 
         WebElement sifre2 = driver.findElement(By.xpath("//input[@id='rnufp2']"));
-        sifre2.sendKeys("BoraDora123");
+        sifre2.sendKeys("DurmakYok123");
         MyFunction.wait(1);
 
         WebElement cinsiyet = driver.findElement(By.xpath("//input[@id='rngm']"));
@@ -98,17 +98,17 @@ public class KayitOlveKayitSil extends BaseDriver{
         WebElement kampanya = driver.findElement(By.xpath("//*[@id='rnufnee']"));
         kampanya.click();
         MyFunction.wait(1);
-      
-      //  WebElement hesapAc = driver.findElement(By.xpath("//*[@id='rfb']"));
-      //  hesapAc.click();
 
-        System.out.println("Test 1: Hesap başarıyla oluşturuldu");
+        WebElement hesapAc = driver.findElement(By.xpath("//*[@id='rfb']"));
+        MyFunction.wait(1);
 
+        System.out.println(" Test 1: Başarılıyla geçti, hesap oluşturuldu");
     }
 
+    
     @Test
-    public void Test2() {
-
+    public void Test2()       // DOĞRU EMAIL VE YANLIŞ ŞİFRE İLE HESAP SİLME TESTİ
+    {
         driver.get("https://www.akakce.com");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
@@ -119,10 +119,12 @@ public class KayitOlveKayitSil extends BaseDriver{
 
         // Giriş yap
         WebElement email3 = driver.findElement(By.id("life"));
-        email3.sendKeys("BoraDora@gmail.com");
+        email3.sendKeys("DurmakYok123@gmail.com");
+	    MyFunction.wait(1);
 
         WebElement sifre3 = driver.findElement(By.id("lifp"));
-        sifre3.sendKeys("BoraDora123");
+        sifre3.sendKeys("DurmakYok123");
+	    MyFunction.wait(1);
 
         WebElement girisyap = driver.findElement(By.id("lfb"));
         girisyap.click();
@@ -134,87 +136,99 @@ public class KayitOlveKayitSil extends BaseDriver{
 
         WebElement hsp1 = driver.findElement(By.id("HM_v8"));
         hsp1.click();
+	    MyFunction.wait(1);
 
         WebElement hesabiSil = driver.findElement(By.linkText("Hesabımı Sil"));
         hesabiSil.click();
+	    MyFunction.wait(1);
 
         // Şifreyi gir ve "Hesabımı Sil" butonuna tıkla
         WebElement sifreGir = driver.findElement(By.id("p"));
-        sifreGir.sendKeys("BoraDora4560");
-        MyFunction.wait(1);
-
-       WebElement hesabimiSilbtn = driver.findElement(By.id("u"));
-        hesabimiSilbtn.click();
-        MyFunction.wait(1);
-
-        // Hata mesajını seç ve kontrol et
-        WebElement hataMesaji = driver.findElement(By.xpath("//*[contains(text(), 'Mevcut şifrenizi doğru girdiğinizden emin olun.')]"));
-        String hataMetni = hataMesaji.getText();
-        String waitnenHataMesaji = "Mevcut şifrenizi doğru girdiğinizden emin olun.";
-        Assert.assertEquals("Hata mesajı kontrolü", waitnenHataMesaji, hataMetni);
-
-
-        System.out.print("Test 2: Başarılıyla geçti ve istenilen mesajı alındı -> " + waitnenHataMesaji);
-
-    }
-
-    @Test
-    public void Test3()
-    {
-        driver.get("https://www.akakce.com");
-        driver.manage().window().maximize();
-        driver.manage().deleteAllCookies();
-
-
-//        WebElement hsp3= driver.findElement(By.id("H_a_v8"));
-//        hsp3.click();
-//        MyFunction.wait(1);
-//
-//        WebElement cik = driver.findElement(By.xpath("//*[contains(text(), '#Çık')]"));
-//        cik.click();
-//        MyFunction.wait(1);
-
-        WebElement giris5 = driver.findElement(By.xpath("//a[contains(@href, '/akakcem/giris/') and text()='Giriş Yap']"));
-        giris5.click();
-        MyFunction.wait(1);
-
-        // Giriş yap
-        WebElement email3 = driver.findElement(By.id("life"));
-        email3.sendKeys("BoraDora@gmail.com");
-
-        WebElement sifre3 = driver.findElement(By.id("lifp"));
-        sifre3.sendKeys("BoraDora123");
-
-        WebElement girisyap = driver.findElement(By.id("lfb"));
-        girisyap.click();
-        MyFunction.wait(1);
-
-        WebElement hsp2 = driver.findElement(By.id("HM_v8"));
-        hsp2.click();
-
-
-        WebElement hesabiSil= driver.findElement(By.linkText("Hesabımı Sil"));
-        hesabiSil.click();
-
-        // Şifreyi gir ve "Hesabımı Sil" butonuna tıkla
-        WebElement sifreGir = driver.findElement(By.id("p"));
-        sifreGir.sendKeys("BoraDora123");
+        sifreGir.sendKeys("DurmakYok456");
         MyFunction.wait(1);
 
         WebElement hesabimiSilbtn = driver.findElement(By.id("u"));
         hesabimiSilbtn.click();
         MyFunction.wait(1);
 
-        System.out.println("Test 3: Başarılıyla geçti, hesap silindi  " );
+        // Hata mesajını seç ve kontrol et
+        WebElement hataMesaji = driver.findElement(By.xpath("//*[contains(text(), 'Mevcut şifrenizi doğru girdiğinizden emin olun.')]"));
+        String hataMetni = hataMesaji.getText();
+        String beklenenHataMesaji = "Mevcut şifrenizi doğru girdiğinizden emin olun.";
+        Assert.assertEquals("Hata mesajı kontrolü", beklenenHataMesaji, hataMetni);
 
-        BekleveKapat();
+        WebElement tamamtamam = driver.findElement(By.cssSelector("button[onclick='Modal_v8.close()']"));
+        tamamtamam.click();
+        MyFunction.wait(1);
 
+        System.out.println(" Test 2: Başarılıyla geçti, istenilen mesajı alındı-> " + hataMetni);
+
+        MyFunction.wait(1);
     }
 
-
+    
     @Test
-    public void Test4()
+    public void Test3()        // DOĞRU EMAİL VE DOĞRU ŞİFRE İLE HESAP SİLME TESTİ
     {
+
+        driver.get("https://www.akakce.com");
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
+
+
+        WebElement giris = driver.findElement(By.xpath("//a[contains(@href, '/akakcem/giris/') and text()='Giriş Yap']"));
+        giris.click();
+        MyFunction.wait(1);
+
+        // Giriş yap
+        WebElement email3 = driver.findElement(By.id("life"));
+        email3.sendKeys("DurmakYok123@gmail.com");
+	    MyFunction.wait(1);
+
+        WebElement sifre3 = driver.findElement(By.id("lifp"));
+        sifre3.sendKeys("DurmakYok123");
+	    MyFunction.wait(1);
+
+        WebElement girisyap = driver.findElement(By.id("lfb"));
+        girisyap.click();
+        MyFunction.wait(1);
+
+        WebElement hsp = driver.findElement(By.id("H_a_v8"));
+        hsp.click();
+        MyFunction.wait(1);
+
+        WebElement hsp1 = driver.findElement(By.id("HM_v8"));
+        hsp1.click();
+	    MyFunction.wait(1);
+
+        WebElement hesabiSil = driver.findElement(By.linkText("Hesabımı Sil"));
+        hesabiSil.click();
+	    MyFunction.wait(1);
+
+        // Şifreyi gir 
+        WebElement sifreGir = driver.findElement(By.id("p"));
+        sifreGir.sendKeys("DurmakYok123");
+        MyFunction.wait(1);
+
+	    // "Hesabımı Sil" butonuna tıkla
+        WebElement hesabimiSilbtn = driver.findElement(By.id("u"));
+        hesabimiSilbtn.click();
+        MyFunction.wait(1);
+
+        WebElement anaSayfaGit = driver.findElement(By.cssSelector("#C4w > ul > li > p > a:nth-child(2)"));
+        anaSayfaGit.click();
+        MyFunction.wait(1);
+
+        System.out.println(" Test 3: Başarılıyla geçti, hesap silindi  " );
+
+        MyFunction.wait(1);
+    }
+
+    
+    @Test
+    public void Test4()       //HESABI SİLİP SİLMEDİĞİNİ KONTROL TESTİ
+    {
+        MyFunction.wait(4);
 
         driver.get("https://www.akakce.com");
         driver.manage().window().maximize();
@@ -226,10 +240,12 @@ public class KayitOlveKayitSil extends BaseDriver{
 
         // Giriş yap
         WebElement email3 = driver.findElement(By.id("life"));
-        email3.sendKeys("BoraDora@gmail.com");
+        email3.sendKeys("DurmakYok123@gmail.com");
+	    MyFunction.wait(1);
 
         WebElement sifre3 = driver.findElement(By.id("lifp"));
-        sifre3.sendKeys("BoraDora123");
+        sifre3.sendKeys("DurmakYok123");
+	    MyFunction.wait(1);
 
         WebElement girisyap1 = driver.findElement(By.id("lfb"));
         girisyap1.click();
@@ -237,16 +253,16 @@ public class KayitOlveKayitSil extends BaseDriver{
 
         WebElement hataMesaji1 = driver.findElement(By.xpath("//*[contains(text(), 'Böyle bir kullanıcı yok.')]"));
         String hataMetni1 = hataMesaji1.getText();
-        String waitnenHataMesaji1 = "Böyle bir kullanıcı yok.";
-        Assert.assertEquals("Hata mesajı kontrolü", waitnenHataMesaji1, hataMetni1);
+        String beklenenHataMesaji1 = "Böyle bir kullanıcı yok.";
+        Assert.assertEquals("Hata mesajı kontrolü", beklenenHataMesaji1, hataMetni1);
 
-        System.out.print("Test 4: Başarılıyla geçti ve istenilen mesajı alındı -> " + waitnenHataMesaji1);
+        System.out.println(" Test 4: Başarılıyla geçti ve istenilen mesajı alındı -> " + beklenenHataMesaji1);
+
+        MyFunction.wait(1);
 
         BekleveKapat();
+
 
     }
 
 }
-
-
-
