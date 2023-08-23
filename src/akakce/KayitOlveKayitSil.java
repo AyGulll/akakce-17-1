@@ -9,11 +9,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class KayitolVeSil extends BaseDriver {
+public class KayitOlveKayitSil  extends BaseDriver {
 
 
     @Test
-    public void Test1()            // YENI HESAP OLUŞTURMA
+    public void Test1()    // YENI HESAP OLUŞTURMA
+	
     {
         driver.get("https://www.akakce.com");
         driver.manage().window().maximize();
