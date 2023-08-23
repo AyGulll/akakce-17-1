@@ -16,10 +16,10 @@ public class LoginTest extends BaseDriver {
     login.click();
     MyFunction.wait(3);
     WebElement emailbox=driver.findElement(By.xpath("//input[@id='life']"));
-    emailbox.sendKeys("fdsg@sdf.com");
+    emailbox.sendKeys("BoraDora@gmail.com");
     MyFunction.wait(3);
     WebElement password=driver.findElement(By.xpath("//input[@id='lifp']"));
-    password.sendKeys("123456");
+    password.sendKeys("BoraDora123");
     MyFunction.wait(3);
     WebElement rememberme=driver.findElement(By.xpath("//input[@name='lifr']"));
     rememberme.isSelected();
