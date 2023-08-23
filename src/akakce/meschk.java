@@ -29,9 +29,9 @@ public class meschk extends BaseDriver {
         WebElement msg= driver.findElement(By.xpath("//*[@id='AL']/li[1]/a[2]"));
         msg.click();
         MyFunction.wait(1);
-        //WebElement msg2= driver.findElement(By.xpath("//*[@id='C4w']/div/p"));
-        //msg2.click();
-        //MyFunc.wait(1);
+        WebElement msg2= driver.findElement(By.xpath("//*[@id='C4w']/div/p"));
+        msg2.click();
+        MyFunction.wait(1);
         WebElement tex= driver.findElement(By.xpath("//*[@id='C4w']/div/p"));
         if (tex.getText().equals("Listelenecek mesaj bulunamadı.")){
             System.out.println("mesaj kutusu bos kontrol edildi");

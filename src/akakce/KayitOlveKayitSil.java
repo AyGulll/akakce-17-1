@@ -99,8 +99,8 @@ public class KayitOlveKayitSil extends BaseDriver{
         kampanya.click();
         MyFunction.wait(1);
       
-        WebElement hesapAc = driver.findElement(By.xpath("//*[@id='rfb']"));
-        hesapAc.click();
+      //  WebElement hesapAc = driver.findElement(By.xpath("//*[@id='rfb']"));
+      //  hesapAc.click();
 
         System.out.println("Test 1: Hesap başarıyla oluşturuldu");
 
@@ -140,10 +140,10 @@ public class KayitOlveKayitSil extends BaseDriver{
 
         // Şifreyi gir ve "Hesabımı Sil" butonuna tıkla
         WebElement sifreGir = driver.findElement(By.id("p"));
-        sifreGir.sendKeys("BoraDora456");
+        sifreGir.sendKeys("BoraDora4560");
         MyFunction.wait(1);
 
-        WebElement hesabimiSilbtn = driver.findElement(By.id("u"));
+       WebElement hesabimiSilbtn = driver.findElement(By.id("u"));
         hesabimiSilbtn.click();
         MyFunction.wait(1);
 

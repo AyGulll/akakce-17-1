@@ -117,10 +117,10 @@ public class AkakceProjeSignUp extends BaseDriver {
 
         //Hesap Ac Butonu
 
-        WebElement hesapAcButonu = driver.findElement(By.xpath("//input[@id='rfb']"));
-        hesapAcButonu.click();
+       // WebElement hesapAcButonu = driver.findElement(By.xpath("//input[@id='rfb']"));
+        //hesapAcButonu.click();
 
-        MyFunction.wait(2);
+       // MyFunction.wait(2);
         //BekleVeKapat();
     }
 
