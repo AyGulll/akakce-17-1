@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class sipol extends BaseDriver {
+public class _5_siparischeck extends BaseDriver {
     
 @Test
        public void sippl() {

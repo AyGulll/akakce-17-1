@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class meschk extends BaseDriver {
+public class _4_messgcheck extends BaseDriver {
     @Test
         public void mesgchk (){
 

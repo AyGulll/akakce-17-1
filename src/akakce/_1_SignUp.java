@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-public class AkakceProjeSignUp extends BaseDriver {
+public class _1_SignUp extends BaseDriver {
 
 
     @Test

@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class LoginAndLogout extends BaseDriver {
+public class _3_Logout extends BaseDriver {
 
     @Test
     public void logoutTest(){
@@ -21,11 +21,11 @@ public class LoginAndLogout extends BaseDriver {
         paasword.sendKeys("12345PLMok");
         WebElement clickgiris=driver.findElement(By.xpath("//*[@id='lfb']"));
         clickgiris.click();
+        MyFunction.wait(1);
+        WebElement logout=driver.findElement(By.xpath("//*[@id='HM_v8']/ul/li[5]/a"));
+        logout.click();
 
-       WebElement logout=driver.findElement(By.xpath("//*[@id='HM_v8']/ul/li[5]/a"));
-       logout.click();
-
-        MyFunction.wait(2);
+        MyFunction.wait(1);
 
     }
 }
