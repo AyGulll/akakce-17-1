@@ -101,6 +101,7 @@ public class KayitOlveKayitSil  extends BaseDriver {
         MyFunction.wait(1);
 
         WebElement hesapAc = driver.findElement(By.xpath("//*[@id='rfb']"));
+	hesapAc.click();
         MyFunction.wait(1);
 
         System.out.println(" Test 1: Başarılıyla geçti, hesap oluşturuldu");
