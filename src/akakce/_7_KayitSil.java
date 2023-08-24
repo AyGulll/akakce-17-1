@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public class KayitOlveKayitSil  extends BaseDriver {
+public class _7_KayitSil  extends BaseDriver {
 
 
     @Test
